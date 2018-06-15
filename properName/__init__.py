@@ -94,9 +94,9 @@ STREET_NAMES = {
     'xg', 'xing', 'xrd', 'xrds'
 }
 
-LABELS = ['Name', 'Other']  # The labels should be a list of strings
+LABELS = ['Name', 'Other']
 
-# ***************** OPTIONAL CONFIG *******************************************
+# *****************************************************************************
 # the XML tag for each labeled string
 PARENT_LABEL = 'Nouns'
 # the XML tag for a group of strings
@@ -139,7 +139,6 @@ def tag(raw_string, type=None):
     tagged = OrderedDict()
     for token, label in parse(raw_string):
         tagged.setdefault(label, []).append(token)
-    # print(tagged)
     tracker = {'Name':0, 'Other':0}
 
     for token in tagged:
@@ -148,17 +147,13 @@ def tag(raw_string, type=None):
         component = component.strip(' ,;')
         tagged[token] = component
 
-    # print(tracker)
     if 'Name' in tagged:
         if tracker['Name'] + tracker['Other'] >= 5 and tracker['Other'] > tracker['Name']:
             name_type = 'Other'
-            # print('tis life')
         else:
             name_type = 'Proper Name'
-            # print('This is your moment to shine!')
     else:
         name_type = 'Other'
-    # print(name_type)
 
     return tagged, name_type
 
@@ -217,7 +212,7 @@ def tokens2features(tokens, check=False):
         feature_sequence[-1]['next'] = current_features
         token_features['previous'] = previous_features
 
-        # DEFINE ANY OTHER FEATURES THAT ARE DEPENDENT UPON TOKENS BEFORE/AFTER
+        # FEATURES THAT ARE DEPENDENT UPON TOKENS BEFORE/AFTER
         # for example, a feature for whether a certain character has appeared
         # previously in the token sequence
 
