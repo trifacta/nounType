@@ -59,7 +59,7 @@ For the sake of preventing overlap, a name excludes places, company names, addre
 
 The name parser was created using [parserator](https://github.com/datamade/parserator) to create domain-specific probabilistic parsers using [python-crfsuite](https://github.com/scrapinghub/python-crfsuite)'s implementation of conditional random fields. The model itself was trained using an xml file where depending on how the entity was tokenized and classified could either be labeled as 'Proper Name' or 'Other'.
 
-The classifer can deal with a variety of cases and forms of names including Proper Case, Upper Case, First Last and names including Prefixes and/or suffixes.
+The classifer can deal with a variety of cases and forms of names including Proper Case, Upper Case, First Last and names including prefixes and/or suffixes.
 
 ### Classifier
-A few of the features that the parsers uses when tagging an entity include length of the entity, occurrence of special characters, such as at sign (@), hyphens (-)  and abbreviation (, or .) and the double [metaphone](https://en.wikipedia.org/wiki/Metaphone) phonetic encoding algorithm.
+A few of the features that the parser uses when tagging an entity include length of the entity, occurrence of special characters, such as 'at' sign (@), hyphens (-)  and punctuation (, or .) and the double [metaphone](https://en.wikipedia.org/wiki/Metaphone) phonetic encoding algorithm.
