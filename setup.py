@@ -5,8 +5,8 @@ except ImportError:
 
 setup(
     version='0.1',
-    url='',
-    description='',
+    url='https://github.com/trifacta/nounType',
+    description='Parses Name entities using Conditional Random Fields',
     name='properName',
     packages=['properName'],
     package_data={'properName': ['nouns_learned_settings.crfsuite']},
