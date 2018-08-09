@@ -13,7 +13,6 @@ setup(
     license='The MIT License: http://www.opensource.org/licenses/mit-license.php',
     install_requires=['python-crfsuite>=0.7',
                       'future>=0.14',
-                      'lxml', 
                      'doublemetaphone',
                      'probableparsing'],
     classifiers=[
