@@ -12,7 +12,6 @@ setup(
     package_data={'properName': ['nouns_learned_settings.crfsuite']},
     license='The MIT License: http://www.opensource.org/licenses/mit-license.php',
     install_requires=['python-crfsuite>=0.7',
-                      'lxml',
                       'future>=0.14',
                      'doublemetaphone',
                      'probableparsing'],
