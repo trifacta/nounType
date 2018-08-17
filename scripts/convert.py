@@ -9,17 +9,23 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-# Set up initial label bin (NC)
+# Set up initial label bin - NounCollection -- DO NOT CHANGE
 NC = ET.Element('NounCollection')
-
 # Set up names for subelements
-# elem under NC
+# elem under NounCollection -- DO NOT CHANGE
 subelem1 = 'Nouns'
-# elem under subelem1
-subelem2 = 'Other'  # Name, Other
 
+##########################################
+######### ELEMENTS TO BE CHANGED #########
+##########################################
+# elem under subelem1 -- CHANGE BASED ON THE TYPE YOU ARE LABELLING
+subelem2 = 'Other'  # Either Name, Other
 # set file name
-filename = 'alphabet.csv'
+filename = 'FILE_NAME_HERE'
+
+#######################
+######### END #########
+#######################
 
 # open file
 with open(filename) as f:
@@ -39,6 +45,9 @@ formatedXML = minidom.parseString(ET.tostring(
 # Display for debugging
 print formatedXML
 
+##########################################
+######### ELEMENTS TO BE CHANGED #########
+##########################################
 # write the formatedXML to file.
-with open("alphabet.xml", "w+") as f:
+with open("stuffs.xml", "w+") as f:
     f.write(formatedXML)
