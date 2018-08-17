@@ -64,9 +64,17 @@ pip install parserator
 2. Prepare the XML file for the training data. 
 
 * For help formatting and creating the XML file, there is a `scripts/convert.py` file that will create the file based on the tag you wish to use. Compilation of the seperate XML files will need to be done separately.
-* Another way to create the training file is to use parserator's command line interface to manually label tokens. It uses values in first column, and it ignores all other columns. To start labeling, run ```parserator label [infile] [outfile] properName``` For example, ```parserator label training/training.csv training/combined.xml properName```.
+* Another way to create the training file is to use parserator's command line interface to manually label tokens. It uses values in first column, and it ignores all other columns. To start labeling, run 
+```
+parserator label [infile] [outfile] properName
+``` 
+For example, ```parserator label training/training.csv training/combined.xml properName```.
 
-3. Once the XML File is created, to re-train the model, simply run the command `parserator train [traindata] properName`, substituting `[traindata]` for the filepath to the XML file. For example, ` parserator train training/totalcomb_v2.xml properName`.
+3. Once the XML File is created, to re-train the model, simply run the command 
+```
+parserator train [traindata] properName
+```
+Substitute `[traindata]` for the filepath to the XML file. For example, ` parserator train training/totalcomb_v2.xml properName`.
 
 
 <a name="functionality"></a> Functionality
